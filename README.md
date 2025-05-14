@@ -3,6 +3,7 @@
 A clean, keyboard-driven BSPWM setup with Polybar, Kitty, and a beautiful tiling workflow. Built for speed, minimalism, and full control over the desktop experience.
 
 ![Screenshot](screenshot.png)
+![Screenshot](screenshot2.png)
 
 ---
 
@@ -60,28 +61,32 @@ A clean, keyboard-driven BSPWM setup with Polybar, Kitty, and a beautiful tiling
 - `rofi`
 - `zsh`
 - `nerd-fonts` (JetBrains Mono recommended)
-  
+
 sudo apt install bspwm sxhkd polybar kitty rofi feh zsh fonts-jetbrains-mono
+  
+
 ---
 
 ## 📦 Installation
 
 1. Clone this repo:
-
-```bash
+```
 git clone https://github.com/lightning-fast/dotfiles-bspwm.git ~/dotfiles
+```
 
 2. Copy configs into ~/.config:
-
+```bash
 cp -r ~/dotfiles/bspwm ~/.config/
 cp -r ~/dotfiles/sxhkd ~/.config/
 cp -r ~/dotfiles/polybar ~/.config/
 # etc.
+```
 
 3. Make sure scripts are executable
-
+```
 chmod +x ~/.config/bspwm/bspwmrc
 chmod +x ~/.config/polybar/launch.sh
+```
 
 4. Install required packages and reboot your session
 
