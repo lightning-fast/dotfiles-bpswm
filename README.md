@@ -2,7 +2,7 @@
 
 A clean, keyboard-driven BSPWM setup with Polybar, Kitty, and a beautiful tiling workflow. Built for speed, minimalism, and full control over the desktop experience.
 
-!!ONLY DOWNLOAD IF YOU KNOW WHAT YOURE DOING!!
+## ⚠️!!ONLY DOWNLOAD IF YOU KNOW WHAT YOURE DOING!!⚠️
 
 ![Screenshot](screenshot.png)
 ![Screenshot](screenshot2.png)
