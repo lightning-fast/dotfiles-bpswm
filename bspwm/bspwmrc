@@ -1,0 +1,55 @@
+#! /bin/sh
+
+# bspwm settings
+bspc config border_width 2
+bspc config window_gap 35
+bspc config split_ratio         0.50
+bspc config borderless_monocle  true
+bspc config gapless_monocle     true
+bspc config focus_by_distance   true
+bspc config focus_follows_pointer true
+
+# bspwm rule setup
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+bspc rule -a Firefox state=tiled border=off
+
+# Start necessary apps
+picom &
+dunst &
+nm-applet &
+flameshot &
+pasystray &
+clipit &
+setxkbmap us
+
+
+# Colors
+bspc config normal_border_color "#1e1e1e"
+bspc config active_border_color "#64B5F6"
+bspc config focused_border_color "#64B5F6"
+bspc config presel_border_color "#ffffff"
+
+# Mouse disable Acceleration
+~/.config/bspwm/mouse.sh &
+
+# Set the initial top padding for Polybar
+bspc config top_padding 30
+
+# Launch Polybar
+~/.config/polybar/launch.sh &
+
+# Simple fullscreen hook for hiding/showing Polybar
+bspc subscribe node_state | while read -r _ _ wid state; do
+    if [ "$state" = "fullscreen" ]; then
+        bspc config top_padding 0
+        polybar-msg cmd hide
+    else
+        bspc config top_padding 30
+        polybar-msg cmd show
+    fi
+done &
+
